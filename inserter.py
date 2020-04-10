@@ -4,6 +4,7 @@ try:
     import uuid
     import json
     import pymongo
+    import dnspython
     import random
     import time
     import sys
@@ -89,9 +90,6 @@ def create_json_object():
     "notes" : getNotes() }
   return normalCrap
 
-
-collection = db['test_me']
-joiner = db['users']
 loop_count = 0
 for i in range(config_options['number_docs']):
     if loop_count == config_options['batch_size']:
