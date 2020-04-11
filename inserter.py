@@ -62,7 +62,7 @@ def getNotes():
   x = []
   y = random.randrange(20)
   for z in range(y):
-    x.append({"user" : "loudSam",
+    x.append({"user" : ranString(10),
             "action" : datetime.now()})
   return x
 
@@ -74,6 +74,10 @@ def ranNum(stringLength = 20):
   digits = string.digits
   return ''.join(random.choice(digits) for i in range(stringLength))
 
+def ranData():
+    bites = bytes(range(256))
+    return bites
+
 def create_json_object():
   x = uuid.uuid4()
   normalCrap = {
@@ -84,6 +88,7 @@ def create_json_object():
     "d" : ranString(100),
     "e" : ranNum(33),
     "f" : "TEST",
+    "g" : ranData(),
     "eventEndDtTm" : datetime.now(),
     "eventStartDtTm" : datetime.now(),
     "notes" : getNotes() }
