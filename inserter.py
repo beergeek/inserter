@@ -4,7 +4,6 @@ try:
     import uuid
     import json
     import pymongo
-    import dnspython
     import random
     import time
     import sys
@@ -63,8 +62,8 @@ def getNotes():
   x = []
   y = random.randrange(20)
   for z in range(y):
-    x.append("""{"user" : "loudSam",
-            "action" : datetime.now()}""")
+    x.append({"user" : "loudSam",
+            "action" : datetime.now()})
   return x
 
 def ranString(stringLength = 20):
